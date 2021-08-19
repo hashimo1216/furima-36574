@@ -63,8 +63,8 @@
 | postal_code         | integer    | null: false              |
 | prefecture          | string     | null: false              |
 | street              | string     | null: false              |
-| building_name       | string     | null: false              |
-| phone_number        | integer    | null: false              |
+| building_name       | string     |                          |
+| phone_number        | string     | null: false              |
 | user                | reference  | null: false, foreign_key |
 
 - belongs_to :user
