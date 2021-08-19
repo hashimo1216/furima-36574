@@ -60,7 +60,7 @@
 
 | Column              | Type       | Options                  |
 | ------------------- | ---------- | -------------------------|
-| postal_code         | integer    | null: false              |
+| postal_code         | string     | null: false              |
 | prefecture          | string     | null: false              |
 | street              | string     | null: false              |
 | building_name       | string     |                          |
