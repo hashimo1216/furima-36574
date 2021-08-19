@@ -35,7 +35,7 @@
 ### Association
 
 - belongs_to :user
-- has_to :orders
+- has_one :order
 
 
 
