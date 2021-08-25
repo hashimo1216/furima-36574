@@ -11,3 +11,4 @@ FactoryBot.define do
     birth_day             {"2021-01-01"}
   end
 end
+
