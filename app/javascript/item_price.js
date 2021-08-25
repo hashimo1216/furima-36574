@@ -9,7 +9,7 @@ function sellingPrice () {
     addTaxPrice.innerHTML = valueResult;
     
     const profit = document.getElementById('profit')
-    profit.innerHTML = inputValue - valueResult;
+    profit.innerHTML = (Math.floor(inputValue - valueResult));
   });
 
 }
