@@ -31,27 +31,27 @@ RSpec.describe Item, type: :model do
       it 'item_price:¥300以下だと保存できないこと' do
         @item.item_price = 200
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is out of setting range")
+        expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
       it 'item_price:¥9,999,999以上だと保存できないこと' do
-        @item.item_price = 10000000
+        @item.item_price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is out of setting range")
-      end       
+        expect(@item.errors.full_messages).to include('Item price is out of setting range')
+      end
       it 'item_price:半角英字の場合は保存はできないこと' do
         @item.item_price = 'aaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is out of setting range")
+        expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
       it 'item_price:英数字混合の場合は保存できないこと' do
         @item.item_price = 'aaa12'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is out of setting range")
+        expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
       it 'item_price:全角数字の場合は保存できないこと' do
         @item.item_price = '１０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is out of setting range")
+        expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
       it 'category_id:選択しないと保存できないこと' do
         @item.category_id = 1
@@ -84,5 +84,5 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
     end
-  end 
+  end
 end
