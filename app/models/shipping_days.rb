@@ -1,4 +1,4 @@
-class ShippingDays < ActiveHash::Base 
+class ShippingDays < ActiveHash::Base
   self.data = [
     { id: 1, days: '---' },
     { id: 2, days: '1~2日で発送' },
