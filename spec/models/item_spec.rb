@@ -13,8 +13,8 @@ RSpec.describe Item, type: :model do
     end
 
     context '出品できない場合' do
-      it 'item_name:空だと保存できないこと' do
-        @item.item_name = ''
+      it 'name:空だと保存できないこと' do
+        @item.name = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Item name can't be blank")
       end
@@ -23,33 +23,33 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
-      it 'item_price:空だと保存できないこと' do
-        @item.item_price = ''
+      it 'price:空だと保存できないこと' do
+        @item.price = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Item price can't be blank")
       end
-      it 'item_price:¥300以下だと保存できないこと' do
-        @item.item_price = 200
+      it 'price:¥300以下だと保存できないこと' do
+        @item.price = 200
         @item.valid?
         expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
-      it 'item_price:¥9,999,999以上だと保存できないこと' do
-        @item.item_price = 10_000_000
+      it 'price:¥9,999,999以上だと保存できないこと' do
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
-      it 'item_price:半角英字の場合は保存はできないこと' do
-        @item.item_price = 'aaa'
+      it 'price:半角英字の場合は保存はできないこと' do
+        @item.price = 'aaa'
         @item.valid?
         expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
-      it 'item_price:英数字混合の場合は保存できないこと' do
-        @item.item_price = 'aaa12'
+      it 'price:英数字混合の場合は保存できないこと' do
+        @item.price = 'aaa12'
         @item.valid?
         expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
-      it 'item_price:全角数字の場合は保存できないこと' do
-        @item.item_price = '１０００'
+      it 'price:全角数字の場合は保存できないこと' do
+        @item.price = '１０００'
         @item.valid?
         expect(@item.errors.full_messages).to include('Item price is out of setting range')
       end
@@ -68,8 +68,8 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee can't be blank")
       end
-      it 'shipping_area_id:選択しないと保存できないこと' do
-        @item.shipping_area_id = 1
+      it 'prefecture_id:選択しないと保存できないこと' do
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping area can't be blank")
       end
