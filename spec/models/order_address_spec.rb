@@ -25,7 +25,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("User can't be blank")
       end
-      it 'user_idが空だと保存できないこと' do
+      it 'item_idが空だと保存できないこと' do
         @order_address.item_id = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Item can't be blank")
