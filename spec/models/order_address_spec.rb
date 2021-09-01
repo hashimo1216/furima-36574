@@ -65,6 +65,11 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number is too short")
       end
+      it 'phone_numberは半角数値以外の文字が含まれている場合保存できないこと' do
+        @order_address.phone_number = 'aaaaaaaaaaa'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is too short")
+      end
     end
   end
 end
